@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "foodbag",
+  "version": "${version}",
+  "name": "Food Bag",
+  "description": "Кнопка в инвентаре: 6 ячеек, из которых еда съедается автоматически.",
+  "authors": ["you"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.foodbag.FoodBagMod"],
+    "client": ["com.foodbag.client.FoodBagClient"]
+  },
+  "mixins": [
+    { "config": "foodbag.mixins.json", "environment": "client" }
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
