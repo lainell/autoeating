@@ -9,10 +9,8 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 
 public class FoodBagScreen extends AbstractContainerScreen<FoodBagMenu> {
-	public FoodBagScreen(FoodBagMenu menu, Inventory inventory, Component title) {
-		super(menu, inventory, title);
-		this.imageWidth = 176;
-		this.imageHeight = 133;
+		public FoodBagScreen(FoodBagMenu menu, Inventory inventory, Component title) {
+		super(menu, inventory, title, 176, 133);
 		this.inventoryLabelY = this.imageHeight - 94;
 	}
 
