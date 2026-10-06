@@ -115,8 +115,12 @@ public class FoodBagMod implements ModInitializer {
 		ItemStack stack = updated.get(bestIndex);
 		ItemStack result = stack.finishUsingItem(player.level(), player);
 		// Остаток (например миска от супа) возвращаем игроку.
+				// Остаток (например миска от супа) возвращаем игроку.
 		if (result != stack && !result.isEmpty()) {
-						player.getInventory().placeItemBackInInventory(result);
+			if (!player.getInventory().add(result) && stack.isEmpty()) {
+				// инвентарь полон — оставляем остаток в той же ячейке сумки
+				updated.set(bestIndex, result);
+			}
 		}
 		player.setAttached(BAG, updated);
 	}
